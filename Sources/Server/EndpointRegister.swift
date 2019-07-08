@@ -17,6 +17,12 @@ public extension Endpoint {
 		return String(describing: Self.self)
 	}
 
+
+	static func printParams() {
+		print("My Params are: \(print_r(try! ArrayCoder.decode(object: try! Self.Parameters.init(from: EmptyDecoder()))))")
+		print("My Responces are: \(print_r(try! ArrayCoder.decode(object: try! Self.Responce.init(from: EmptyDecoder()))))")
+	}
+
 	static func register(to routes: inout Routes) {
 
 
